@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    
+</head>
+<body>
+  <section id="loginSection">
+    <div class="login">
+      <div class="form">
+          {% include 'includes/messages.html' %}
+    <form method="POST" enctype="multipart/form-data" action="{% url 'login' %}">
+
+      {% csrf_token%}
+        <form class="login-form">
+          <span class="material-icons">lock</span>
+          <input type="text" name="username" placeholder="username" required/>
+          <input type="password" name="password" placeholder="password" required />
+          <button class="" id="signUP" type="submit">login</button>
+
+          <p class="signup">
+              Don't have an account ?
+              <a href="{%  url 'register' %}" onclick="toggleForm();">Sign Up.</a>
+            </p>
+        </form>  
+      </div>
+    </div>
+  </section>
+   
+</body>
+</html>
+
+{% endblock %}
