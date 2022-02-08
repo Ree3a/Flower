@@ -7,6 +7,7 @@ from django.contrib import messages
 
 from django.contrib.auth.models import auth, User
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 
 # Create your views here.
 def home(request):
@@ -57,3 +58,41 @@ def logout(request):
         # messages.success(request, 'You are successfully logged out.')
         return redirect('login') 
     return redirect('home')
+
+
+def contact(request):
+    if request.method == "POST":
+        message_name = request.POST['message_name']
+        message_email = request.POST['message_email'] 
+        message =request.POST['message']
+
+        send_mail(
+            message_name, #subject
+            message, #message
+            message_email, #from email
+            # settings.EMAIL_HOST_USER,
+            #           ['riyastha406@mail.com'],
+            ['riyastha406@gmail.com' ], #To email
+            # fail_silently= True,
+        )   
+        return render(request, 'pages/contact.html', {'message_name': message_name}) 
+
+    else:
+        return render(request, 'pages/contact.html' , {})     
+
+@login_required
+def afterlogin_view(request):
+    if request.user.is_superuser:
+        return redirect('admindashboard')
+    else:
+        messages.error(request, "Invalid login credentials")
+        return redirect('admin')
+
+@login_required(login_url='admin')
+def admindashboard_view(request):
+    if request.user.is_superuser:
+        user = User.objects.all()
+        return render(request, 'adminControl/admindashboard.html')
+    else:
+        messages.error(request, "Invalid login credentials")
+        return redirect('admin')
