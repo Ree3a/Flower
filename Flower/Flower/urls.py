@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
+
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+     path('admin/', auth_views.LoginView.as_view(template_name='adminControl/adminlogin.html'), name='admin'),
+    # path('admin/', admin.site.urls),
     path('', include('Fulbari.urls')),
     # path('accounts/', include('django.contrib.auth.urls')),
 ]
