@@ -1,9 +1,11 @@
+# from itertools import product
 from django.shortcuts import redirect, render
 from .forms import *
-from django.forms import forms
-from .forms import CustomerForm
+from django.forms import forms, models
+# from .forms import CustomerForm
 from django.contrib.auth import  authenticate
 from django.contrib import messages
+# from Fulbari.models import Product
 
 from django.contrib.auth.models import auth, User
 from django.contrib.auth.decorators import login_required
@@ -96,3 +98,8 @@ def admindashboard_view(request):
     else:
         messages.error(request, "Invalid login credentials")
         return redirect('admin')
+
+
+
+#admin view the product 
+
