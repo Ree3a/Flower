@@ -10,5 +10,5 @@ from Product import views
 urlpatterns = [
 
      path('admin-products', views.admin_products_view,name='admin-products'),
-     # path('addproduct', views.admin_add_product, name='addproduct'),
+     path('addproduct', views.admin_add_product_view, name='addproduct'),
 ]

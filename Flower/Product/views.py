@@ -21,12 +21,11 @@ def admin_products_view(request):
 
 # admin add product by clicking on floating button
 @login_required(login_url='admin')
-def admin_add_product(request):
-    print(request.FILES)
-    if request.method=="POST":
-        products=ProductForm(request.POST,request.FILES)
-        products.save()
-        return redirect ("adminControl/adminlogin.html")
-    else:
-        products=ProductForm()
-    return render (request,"adminControl/addproduct.html",{'products':products})
+def admin_add_product_view(request):
+    productForm=forms.ProductForm()
+    if request.method=='POST':
+        productForm=forms.ProductForm(request.POST, request.FILES)
+        if productForm.is_valid():
+            productForm.save()
+        return HttpResponseRedirect('admin-products')
+    return render(request,'adminControl/addproduct.html',{'productForm':productForm})
