@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Product'
     
 ]
 
@@ -80,7 +81,7 @@ LOGIN_REDIRECT_URL = '/afterlogin'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'flower_db',
+        'NAME': 'watch_db1',
         'USER': 'postgres',
         'PASSWORD': '#Leshmania#406',
         'HOST': 'localhost',
@@ -127,6 +128,12 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+#file upload url and root
+
+# MEDIA_URL="/assets/"
+
+MEDIA_ROOT=os.path.join(BASE_DIR,'assets')
 
 # Messages
 

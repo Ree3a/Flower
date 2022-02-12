@@ -14,6 +14,7 @@ urlpatterns = [
     # Most important functon
     path('afterlogin', views.afterlogin_view, name="afterlogin"),
     path('admindashboard', views.admindashboard_view, name="admindashboard"),
-    #  path('admin-products', views.admin_products_view,name='admin-products'),
+   
 ]
 
+ 
