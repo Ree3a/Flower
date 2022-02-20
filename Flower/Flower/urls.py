@@ -23,8 +23,8 @@ from django.conf import settings
 
 
 urlpatterns = [
-    path('admin/', auth_views.LoginView.as_view(template_name='adminControl/adminlogin.html'), name='admin'),
-    path('admin/', admin.site.urls),
+    path('admin', auth_views.LoginView.as_view(template_name='adminControl/adminlogin.html'), name='admin'),
+    # path('admin/', admin.site.urls),
     path('', include('Fulbari.urls')),
     path('', include('Product.urls')),
     # path('/', include('django.contrib.auth.urls')),
