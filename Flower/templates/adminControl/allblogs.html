@@ -44,13 +44,13 @@
 
 
 <div class="container">
-  <div class="panel panel-primary">
+  <div class=""  style="background-color: azure;">
     <div class="panel-heading">
       <h6 class="panel-title">Total Blog List</h6>
     </div>
     <table class="table table-hover" id="dev-table">
       <thead>
-        <tr>
+        <tr  style="background-color: paleturquoise;">
           <th>Blog Title</th>
           <th> Blog Image</th>
           
@@ -60,11 +60,11 @@
       </thead>
       {% for bg in blogs %}
       {% if bg %}
-      <tr>
+      <tr style="background-color: aliceblue;">
         <td>{{ bg.blog_name }}</td>
         <td><img style="height: 50px; width: auto;" src="{{ bg.blog_image.url }}" alt=""></td>
-        <td><a class="btn btn-danger btn-xs" href="{% url 'update-blog' bg.blog_id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
-        <td><a class="btn btn-danger btn-xs" href="{% url 'delete-blogs' bg.blog_id  %}"><span class="glyphicon glyphicon-trash"></span></a></td>
+        <td><a class="btn btn-danger btn-xs" href="{% url 'update-blog' bg.blog_id  %}"><span class="glyphicon glyphicon-edit"> Update</span></a></td>
+        <td><a class="btn btn-danger btn-xs" href="{% url 'delete-blogs' bg.blog_id  %}"><span class="glyphicon glyphicon-trash"> Delete</span></a></td>
       </tr>
       {% else %}
      

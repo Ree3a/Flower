@@ -212,4 +212,8 @@ def edit_profile_view(request):
     return render(request, 'pages/edit_profile.html', context=mydict)      
 
 
+def profile(request):
+     return render(request, 'pages/profile.html')    
+
+
     

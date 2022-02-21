@@ -42,13 +42,13 @@
 
 
 <div class="container">
-  <div class="panel panel-primary">
+  <div class=""  style="background-color: azure;">
     <div class="panel-heading">
       <h6 class="panel-title">Total Product List</h6>
     </div>
     <table class="table table-hover" id="dev-table">
       <thead>
-        <tr>
+        <tr style="background-color: paleturquoise;">
           <th>Name</th>
           <th>Image</th>
           <th>Price</th>
@@ -59,13 +59,13 @@
       </thead>
       {% for f in products %}
       {% if f %}
-      <tr>
+      <tr style="background-color: aliceblue;">
         <td>{{f.name}}</td>
         <td><img style="height: 20px; width:auto;" src="{{f.product_image.url}}" alt=""></td>
         <td>{{f.price}}</td>
         <td>{{f.description}}</td>
-        <td><a class="btn btn-primary btn-xs" href="{% url 'update-product' f.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
-        <td><a class="btn btn-danger btn-xs" href="{% url 'delete-product' f.id  %}"><span class="glyphicon glyphicon-trash"></span></a></td>
+        <td><a class="btn btn-primary btn-xs" href="{% url 'update-product' f.id  %}"><span class="glyphicon glyphicon-edit"> Update</span></a></td>
+        <td><a class="btn btn-danger btn-xs" href="{% url 'delete-product' f.id  %}"><span class="glyphicon glyphicon-trash"> Delete</span></a></td>
       </tr>
       {% else %}
      

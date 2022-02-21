@@ -1,41 +1,79 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="container-fluid px-0">
-            <img class="img-fluid"  alt="Customer">
-        </div>
-        <h1 class="py-4" style="background-color: gray; color: #fff; text-align:center;">BOOKINGS</h1>
+{% extends 'admin_base.html' %}
+{% load static %}
+{% block content %}
 
-        <table class="table table-hover my-0 py-0">
-            <thead style="background-color: aqua;">
-                <tr>
-                    <th>Customer Name</th>
+
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+<style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+
+    .float{
+	position:fixed;
+	width:70px;
+	height:70px;
+	bottom:60px;
+	right:60px;
+	background-color:red;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 3px 3px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+  </style>
+
+<div class="container">
+    <div class=""  style="background-color: azure;" >
+      <div class="panel-heading">
+        <h6 class="panel-title">Total Customer List</h6>
+      </div>
+      <table class="table table-hover" id="dev-table">
+        <thead>
+            <tr style="background-color: paleturquoise;">
+                <th>Customer Name</th>
                     <th>Email</th>
                     <th>Product Name</th>
                     <th>Image</th>
                     <th>Price</th>
                     <th>Status</th>
                     <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for od in order %}
-                <tr style="background-color: wheat;">
-                    <td>{{ od.user.first_name }} {{ od.user.last_name }}</td>
-                    <td>{{ od.user.email }}</td>
-                    <td>{{ od.product.name }}</td>
-                    <td> <img src="{{ od.product.product_image.url }}" alt="Profile Pic" height="30px" width="40px" />
-                    </td>
-                    <td>{{ od.product.price }}</td>
-                    <td>{{ od.status }}</td>
-                    <td><a class="btn btn-danger btn-xs" href="{% url 'delete-order' od.id  %}"><span
-                                class="glyphicon glyphicon-trash">DELETE</span></a></td>
-                </tr>
-                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for od in order %}
+            <tr style="background-color: aliceblue;">
+                <td>{{ od.user.first_name }} {{ od.user.last_name }}</td>
+                <td>{{ od.user.email }}</td>
+                <td>{{ od.product.name }}</td>
+                <td> <img src="{{ od.product.product_image.url }}" alt="Profile Pic" height="30px" width="40px" />
+                </td>
+                <td>{{ od.product.price }}</td>
+                <td>{{ od.status }}</td>
+                <td><a class="btn btn-danger btn-xs" href="{% url 'delete-order' od.id  %}"><span
+                            class="glyphicon glyphicon-trash">DELETE</span></a></td>
+            </tr>
+            {% endfor %}
 
-            </tbody>
-        </table>
-    </div>
-    
+        </tbody>
+      
+    </table>
     <!-- PAGINATION STARTS -->
     <nav aria-label="..." class="container pt-5">
         {% if order.has_other_pages %}
@@ -72,3 +110,5 @@
     </nav>
     <!-- PAGINATION ENDS -->
 </div>
+
+{% endblock content %}

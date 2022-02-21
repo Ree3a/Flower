@@ -17,6 +17,8 @@ urlpatterns = [
     path('delete-blogs/<int:pk>', views.delete_blog_view,name='delete-blogs'),
 
     path('update-blog/<int:pk>', views.update_blog_view,name='update-blog'),
+
+    path('profile/', views.profile, name='profile'),
     
     
 

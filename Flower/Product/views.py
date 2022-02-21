@@ -142,7 +142,7 @@ def payment(request):
 @login_required(login_url='admin')
 def admin_view_booking_view(request):
     order = Orders.objects.all()
-    paginator = Paginator(order, 5)
+    paginator = Paginator(order, 2)
     page = request.GET.get('page')
     paged_product = paginator.get_page(page)
     data = {
