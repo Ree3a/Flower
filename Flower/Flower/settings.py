@@ -81,7 +81,7 @@ LOGIN_REDIRECT_URL = '/afterlogin'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'watch_db1',
+        'NAME': 'flower_db',
         'USER': 'postgres',
         'PASSWORD': '#Leshmania#406',
         'HOST': 'localhost',

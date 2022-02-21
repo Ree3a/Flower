@@ -10,6 +10,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     outline: none; border: none;
     text-decoration: none;
+    column-gap: 70px;
     /* text-transform: capitalize; */
     transition: .2s linear;
 }
@@ -31,7 +32,7 @@ section{
     font-size: 4rem;
     color: #333;
     padding: 1rem;
-    margin: 2rem 0;
+    margin: 20 rem 0;
     background: rgba(255, 51, 153, .05);
 
 }
@@ -118,7 +119,7 @@ header .fa-bars{
     display: flex;
     align-items: center;
     min-height: 100vh;
-    background: url(/static/Images/check.jpg) no-repeat;
+    background: url(/static/Images/newbg.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
 
@@ -244,7 +245,7 @@ header .fa-bars{
 .products .box-container{
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem;
+    gap: 5.5rem;
 
 }
 
@@ -254,17 +255,18 @@ header .fa-bars{
      border-radius: 0.rem; 
     border: rem solid rgba(0,0,0,.1);
     position: relative;
+    margin-top: 20rem;
 }
 
 .products .box-container .box .discount{
     position: absolute;
     top: 1rem ; left: 1rem;
-    padding:7rem 1rem;
+    padding:5rem 1rem;
     font-size: 2rem;
-    color: var(--pink);
+    color: var(aqua);
     background: rgba(255, 51, 153, .05);
     z-index: 1;
-    border-radius: 5rem;
+    border-radius: 2rem;
 }
 
 .products .box-container .box .image{
@@ -276,6 +278,7 @@ header .fa-bars{
 
 .products .box-container .box .image img{
     height: 25rem;
+    width: 25rem;
 
 }
 
@@ -293,7 +296,7 @@ header .fa-bars{
     bottom: 0;
 }
 
-.products .box-container .box .image .icons a{
+.products .box-container .box .image .icons button{
     height: 5rem;
     line-height: 5rem;
     font-size: 2rem;
@@ -311,7 +314,7 @@ header .fa-bars{
     width: 100%;
 }
 
-.products .box-container .box .image .icons a:hover{
+.products .box-container .box .image .icons button:hover{
     background: #333;
 }
 
@@ -340,62 +343,25 @@ header .fa-bars{
 
 }
 
-.review .box-container{
+#banner {
+    background-image: url(/static/Images/new.jpeg);
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position: top 70px center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.review .box-container .box{
-    flex: 1 1 30rem;
-    /* box-shadow: 0.5rem 1.5rem rgba(0,0,0,.1); */
-    border-radius: .5rem;
-    padding: 3rem 2rem;
-    position: relative;
-    border: 0.5rem solid rgba(0,0,0,.1);
+#banner h4 {
+    color: rgb(185, 39, 39);
 }
 
-.review .box-container .box .fa-quote-right{
-    position: absolute;
-    bottom: 3rem; right: 4rem;
-    font-size: 3rem;
-    color: #eeee;
-}
-
-.review .box-container .box .stars i{
-    color: var(--pink);
-    font-size: 2rem;
-}
-
-.review .box-container .box p{
-    color: #999;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    padding: 2rem;
-}
-
-
-.review .box-container .box .user{
-    display: flex;
-    align-items: center;
-    padding-top: 2rem;
-}
-
-.review .box-container .box .user img{
-    height: 6rem;
-    width: 6rem;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 1rem;
-}
-
-.review .box-container .box .user h3{
-    font-size: 2rem;
-    color: #333;
-}
-
-.review .box-container .box .user span{
-    font-size: 1.5rem;
+#banner h1 {
     color: #333;
 }
 
